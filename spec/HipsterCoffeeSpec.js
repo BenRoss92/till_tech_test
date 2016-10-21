@@ -15,7 +15,7 @@ describe("HipsterCoffee", function() {
   });
 
   it("has a list of prices", function() {
-    expect(this._shopDetails.prices).toEqual([
+    expect(hipsterCoffee._shopDetails.prices).toEqual([
       {
         "Cafe Latte": 4.75,
         "Flat White": 4.75,
@@ -35,5 +35,18 @@ describe("HipsterCoffee", function() {
       }
     ]);
   });
+
+  it("shows the price of quantities of an item", function() {
+    var item = "Flat White";
+    var quantity = 4;
+    expect(hipsterCoffee.get_price(item,quantity)).toEqual(19);
+  });
+
+  // it("adds an item and quantity to a basket", function() {
+  //   var item;
+  //   var quantity;
+  //   hipsterCoffee.add_to_basket(item, quantity);
+  //   expect(hipsterCoffee.view_basket().toEqual({item: quantity}));
+  // });
 
 });
