@@ -66,4 +66,11 @@ describe("HipsterCoffee", function() {
     expect(function() { hipsterCoffee.addToBasket(item, quantity); }).toThrowError('not an item in menu');
   });
 
+  it("throws an error if price being checked is not in menu", function() {
+    var item = "foo";
+    var quantity = 2;
+    expect(function() { hipsterCoffee.getPrice(item, quantity); }).toThrowError('cannot check price as not on menu');
+  });
+
+
 });

@@ -32,6 +32,9 @@ function HipsterCoffee() {
   HipsterCoffee.prototype = {
 
     getPrice: function(item,quantity) {
+      if(this._shopDetails.prices[0][item] === undefined) {
+        throw new Error('cannot check price as not on menu');
+      }
       return (this._shopDetails.prices[0][item] * quantity);
     },
 
