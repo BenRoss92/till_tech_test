@@ -43,11 +43,21 @@ describe("HipsterCoffee", function() {
   });
 
   it("adds item and price to a basket", function() {
+    var price = 19;
     var item = "Flat White";
     var quantity = 4;
-    var price = 19;
     hipsterCoffee.addToBasket(item, quantity);
     expect(hipsterCoffee.viewBasket()).toContain([item, price]);
+  });
+
+  it("calculates total of basket", function() {
+    var item1 = "Flat White";
+    var quantity1 = 4;
+    var item2 = "Americano";
+    var quantity2 = 2;
+    hipsterCoffee.addToBasket(item1, quantity1);
+    hipsterCoffee.addToBasket(item2, quantity2);
+    expect(hipsterCoffee.total()).toEqual(26.50);
   });
 
 });

@@ -42,6 +42,14 @@ function HipsterCoffee() {
 
     viewBasket: function() {
       return this._basket;
+    },
+
+    total: function() {
+      var sum = 0;
+      for (var i = 0; i < (this._basket).length; i++) {
+        sum += this._basket[i][1];
+      }
+      return sum;
     }
 
   };
