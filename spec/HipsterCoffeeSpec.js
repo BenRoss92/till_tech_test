@@ -60,4 +60,10 @@ describe("HipsterCoffee", function() {
     expect(hipsterCoffee.total()).toEqual(26.50);
   });
 
+  it("throws an error if adding item not in menu", function() {
+    var item = "foo";
+    var quantity = 2;
+    expect(function() { hipsterCoffee.addToBasket(item, quantity); }).toThrowError('not an item in menu');
+  });
+
 });

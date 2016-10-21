@@ -36,6 +36,9 @@ function HipsterCoffee() {
     },
 
     addToBasket: function(item, quantity) {
+      if(this._shopDetails.prices[0][item] === undefined) {
+        throw new Error('not an item in menu');
+      }
       var price = this._shopDetails.prices[0][item] * quantity;
       this._basket.push([item, price]);
     },
