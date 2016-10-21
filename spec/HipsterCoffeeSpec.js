@@ -6,20 +6,16 @@ describe("HipsterCoffee", function() {
     hipsterCoffee = new HipsterCoffee();
   });
 
-  it("has a list of items with prices", function() {
-    expect(hipsterCoffee._shopName).toEqual("The Coffee Connection");
-  });
-
   it("has an address", function() {
-    expect(hipsterCoffee._address).toEqual("123 Lakeside Way");
+    expect(hipsterCoffee._shopDetails.address).toEqual("123 Lakeside Way");
   });
 
   it("has a phone number", function() {
-    expect(hipsterCoffee._phone).toEqual("16503600708");
+    expect(hipsterCoffee._shopDetails.phone).toEqual("16503600708");
   });
 
   it("has a list of prices", function() {
-    expect(hipsterCoffee._prices).toEqual([
+    expect(this._shopDetails.prices).toEqual([
       {
         "Cafe Latte": 4.75,
         "Flat White": 4.75,
