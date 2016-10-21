@@ -39,14 +39,15 @@ describe("HipsterCoffee", function() {
   it("shows the price of quantities of an item", function() {
     var item = "Flat White";
     var quantity = 4;
-    expect(hipsterCoffee.get_price(item,quantity)).toEqual(19);
+    expect(hipsterCoffee.getPrice(item,quantity)).toEqual(19);
   });
 
-  // it("adds an item and quantity to a basket", function() {
-  //   var item;
-  //   var quantity;
-  //   hipsterCoffee.add_to_basket(item, quantity);
-  //   expect(hipsterCoffee.view_basket().toEqual({item: quantity}));
-  // });
+  it("adds item and price to a basket", function() {
+    var item = "Flat White";
+    var quantity = 4;
+    var price = 19;
+    hipsterCoffee.addToBasket(item, quantity);
+    expect(hipsterCoffee.viewBasket()).toContain([item, price]);
+  });
 
 });

@@ -25,25 +25,23 @@ function HipsterCoffee() {
   };
 
   this._basket = [];
+  this._price = [];
 
 }
 
   HipsterCoffee.prototype = {
 
-    get_price: function(item,quantity) {
+    getPrice: function(item,quantity) {
       return (this._shopDetails.prices[0][item] * quantity);
-    }
+    },
 
-    // add_to_basket: function(item, quantity) {
-    //   // find out price (item price * quantity)
-    //   // push item and quantity into basket
-    //   this._shopDetails.prices[0][item]
-    //   this._basket.push(item);
-    //   // this._shopDetails.prices[0]
-    // },
-    //
-    // view_basket: function() {
-    //   return this._basket;
-    // }
+    addToBasket: function(item, quantity) {
+      var price = this._shopDetails.prices[0][item] * quantity;
+      this._basket.push([item, price]);
+    },
+
+    viewBasket: function() {
+      return this._basket;
+    }
 
   };
